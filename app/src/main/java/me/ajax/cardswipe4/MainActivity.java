@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     AvatarLayoutManger avatarLayoutManger;
+    CardAdapter cardAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,27 @@ public class MainActivity extends AppCompatActivity {
                 return childCount - i - 1;
             }
         });
-        cardRecyclerView.setAdapter(new CardAdapter());
+        cardAdapter = new CardAdapter();
+        cardRecyclerView.setAdapter(cardAdapter);
+    }
+
+    List<Integer> getDatas() {
+
+        List<Integer> images = new ArrayList<>();
+
+        images.add(R.mipmap.image1);
+        images.add(R.mipmap.image2);
+        images.add(R.mipmap.image3);
+        images.add(R.mipmap.image4);
+        images.add(R.mipmap.image5);
+        images.add(R.mipmap.image6);
+        images.add(R.mipmap.image1);
+        images.add(R.mipmap.image2);
+        images.add(R.mipmap.image12);
+        images.add(R.mipmap.image9);
+        images.add(R.mipmap.image10);
+        images.add(R.mipmap.image11);
+
+        return images;
     }
 }
